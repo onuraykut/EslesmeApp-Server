@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${message}"></title>
+</head>
+<body>
+<h1 th:text="${message}"></h1><form>
+    <input name="testAdi" placeholder="Test adı"/>
+    <input name="kategori" placeholder="Kategori"/>
+    <input type="radio" id="optionsRadios1" name="category" th:field="${message}" th:value="option1">
+    <script>
+document.getElementById("optionsRadios1").setAttribute("checked","checked")
+</script>
+    
+    </form>
+    
+    <form>
+     <input name="name" placeholder="Soru 1"/>
+      <input name="name" placeholder="Adınız"/>
+    <button>Merhaba de</button>
+<form>
+<select th:field="*{percentage}">
+	    <option th:each="i : ${#numbers.sequence(0, 20)}" th:value="${i}" th:text="${i}" 
+	      th:selected="${i==75}"></option>
+	</select>
+	<h1 th:text="${percentage}"></h1>
+</body>
+</html>

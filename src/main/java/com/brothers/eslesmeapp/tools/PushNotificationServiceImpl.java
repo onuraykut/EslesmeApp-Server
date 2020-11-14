@@ -19,12 +19,12 @@ public class PushNotificationServiceImpl {
 
         msg.put("title", messageTitle);
         msg.put("body", message);
-        msg.put("view", "SharedWithMe");
+        msg.put("view", "CozdugumTestler");
         msg.put("click_action", "FLUTTER_NOTIFICATION_CLICK");
 
-        System.out.println("\nCalling fcm Server >>>>>>>");
+    //    System.out.println("\nCalling fcm Server >>>>>>>");
         String response = callToFcmServer(msg, key);
-        System.out.println("Got response from fcm Server : " + response + "\n\n");
+      //  System.out.println("Got response from fcm Server : " + response + "\n\n");
 
        /* keys.forEach(key -> {
             System.out.println("\nCalling fcm Server >>>>>>>");
@@ -46,7 +46,7 @@ public class PushNotificationServiceImpl {
         json.put("notification", message);
         json.put("to", receiverFcmKey);
 
-        System.out.println("Sending :" + json.toString());
+     //   System.out.println("Sending :" + json.toString());
 
         HttpEntity<String> httpEntity = new HttpEntity<>(json.toString(), httpHeaders);
         return restTemplate.postForObject(FIREBASE_API_URL, httpEntity, String.class);

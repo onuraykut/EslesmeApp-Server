@@ -13,7 +13,7 @@ import com.brothers.eslesmeapp.model.Testler;
 @Repository
 public interface TestRepository extends MongoRepository<Testler,String> {
     Optional<Testler> findById(String id);
-    Optional<List<Testler>> findByKategori(String kategori);
+    Optional<List<Testler>> findByKategoriAndOlusturanTipi(String kategori,String olusturanTipi);
     Page<Testler> findAll(Pageable pageable);
     //List<User> findBy
 

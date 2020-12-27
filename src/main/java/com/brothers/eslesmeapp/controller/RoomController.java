@@ -68,10 +68,10 @@ private TestRepository testRepository;
 		this.roomRepository.save(room);
 		User user = this.userRepository.findByUid(cevapKaydet.getUid()).get();
 		user.getUsersRoom().getMySharedWithMeRooms().add(cevapKaydet.getRoomId());
+		user.getBildirim().add(new Bildirim(BildirimKodlari.testCozuldu.getName(),room.getOlusturanUid(),room.getTestId(),room.getId()));
 		this.userRepository.save(user);
 		
 		User olusturanUser = this.userRepository.findByUid(room.getOlusturanUid()).get();
-		olusturanUser.getBildirim().add(new Bildirim(BildirimKodlari.testCozuldu.getName(),room.getOlusturanUid(),room.getTestId(),room.getId()));
 		
 		String olusturanToken = olusturanUser.getToken();
 		new PushNotificationServiceImpl().sendPushNotification(olusturanToken,"Test Çözüldü",user.getName()+" arkadaşın gönderdiğin testi çözdü, sonucu görmek için hemen tıkla!");

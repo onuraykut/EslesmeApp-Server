@@ -58,7 +58,7 @@ private UserRepository userRepository;
 	}
 	@PostMapping(path = "/kategori",produces = MediaType.APPLICATION_JSON_VALUE)
 	public Optional<List<Testler>> getTestByKategori(@RequestParam String kategori) {
-		return testRepository.findByKategori(kategori);
+		return testRepository.findByKategoriAndOlusturanTipi(kategori,"Ekip");
 	}
 	
 	@PostMapping("/save")

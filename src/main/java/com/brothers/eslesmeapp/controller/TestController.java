@@ -68,6 +68,6 @@ private UserRepository userRepository;
 	}
 	@PostMapping("/testlerim")
 	public Optional<List<Testler>> getTestByUid(@RequestParam String uid) {
-		return testRepository.findByUid(uid);
+		return testRepository.findByOlusturanUid(uid);
 	}
 }

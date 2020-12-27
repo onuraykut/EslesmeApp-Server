@@ -71,7 +71,7 @@ private TestRepository testRepository;
 		this.userRepository.save(user);
 		
 		User olusturanUser = this.userRepository.findByUid(room.getOlusturanUid()).get();
-		user.getBildirim().add(new Bildirim(BildirimKodlari.testCozuldu.getName(),user.getUid(),room.getTestId(),room.getId()));
+		olusturanUser.getBildirim().add(new Bildirim(BildirimKodlari.testCozuldu.getName(),user.getUid(),room.getTestId(),room.getId()));
 		
 		String olusturanToken = olusturanUser.getToken();
 		new PushNotificationServiceImpl().sendPushNotification(olusturanToken,"Test Çözüldü",user.getName()+" arkadaşın gönderdiğin testi çözdü, sonucu görmek için hemen tıkla!");

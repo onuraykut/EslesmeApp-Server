@@ -15,6 +15,7 @@ public interface TestRepository extends MongoRepository<Testler,String> {
     Optional<Testler> findById(String id);
     Optional<List<Testler>> findByKategoriAndOlusturanTipi(String kategori,String olusturanTipi);
     Optional<List<Testler>> findByOlusturanUid(String uid);
+    void deleteById(String testId);
     Page<Testler> findAll(Pageable pageable);
     //List<User> findBy
 

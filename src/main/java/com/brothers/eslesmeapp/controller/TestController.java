@@ -70,4 +70,8 @@ private UserRepository userRepository;
 	public Optional<List<Testler>> getTestByUid(@RequestParam String uid) {
 		return testRepository.findByOlusturanUid(uid);
 	}
+	@PostMapping("/sil")
+	public void testSil(@RequestParam String testId) {
+		testRepository.deleteById(testId);
+	}
 }

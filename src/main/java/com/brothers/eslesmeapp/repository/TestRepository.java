@@ -14,6 +14,7 @@ import com.brothers.eslesmeapp.model.Testler;
 public interface TestRepository extends MongoRepository<Testler,String> {
     Optional<Testler> findById(String id);
     Optional<List<Testler>> findByKategoriAndOlusturanTipi(String kategori,String olusturanTipi);
+    Optional<List<Testler>> findByUid(String uid);
     Page<Testler> findAll(Pageable pageable);
     //List<User> findBy
 

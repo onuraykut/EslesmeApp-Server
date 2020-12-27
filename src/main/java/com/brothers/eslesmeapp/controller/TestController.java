@@ -65,6 +65,9 @@ private UserRepository userRepository;
 	public void saveTest(@RequestBody Testler test) {
 		System.out.println(test.toString());
 		testRepository.save(test);
-		
+	}
+	@PostMapping("/testlerim")
+	public List<Testler> getTestByUid(@RequestParam String uid) {
+		return testRepository.findByUid(uid).get();
 	}
 }

@@ -19,7 +19,7 @@ public class CreateDynamicLinkFirebase {
         JSONObject msg = new JSONObject();
         
 
-        msg.put("domainUriPrefix", "https://eslesmeapp.page.link");
+        msg.put("domainUriPrefix", "https://testlebeni.page.link");
         msg.put("link", "https://ucretsizkitapindir.com/"+testId+"-"+roomId);
         JSONObject android = new JSONObject();
         android.put("androidPackageName", "com.brothersoftware.eslesmeapp");
